@@ -1,0 +1,22 @@
+name: Safety Check
+
+on: [pull_request]
+
+jobs:
+  white-circle-scan:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write # Required to post comments
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # HERE IS THE CHANGE:
+      # Instead of "./.github/actions/safety-bot", we point to your bot repo
+      - name: Run White Circle Bot
+        uses: AngrySigma/white-circle-github-bot@main
+        with:
+          whitecircle_api_key: ${{ secrets.WC_API_KEY }}
+          deployment_id: ${{ secrets.WC_DEPLOYMENT_ID }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
