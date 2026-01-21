@@ -15,7 +15,7 @@ jobs:
       # HERE IS THE CHANGE:
       # Instead of "./.github/actions/safety-bot", we point to your bot repo
       - name: Run White Circle Bot
-        uses: AngrySigma/white-circle-github-bot@main
+        uses: AngrySigma/white-circle-github-bot@master
         with:
           whitecircle_api_key: ${{ secrets.WHITECIRCLE_API_KEY }}
           deployment_id: ${{ secrets.WHITECIRCLE_DEPLOYMENT_ID }}
