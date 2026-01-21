@@ -20,3 +20,4 @@ jobs:
           whitecircle_api_key: ${{ secrets.WHITECIRCLE_API_KEY }}
           deployment_id: ${{ secrets.WHITECIRCLE_DEPLOYMENT_ID }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          debug: "true"
